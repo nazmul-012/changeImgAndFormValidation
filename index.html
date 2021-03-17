@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>Form Validation</h1>
+
+    <p>Name: <input type="text" id="name"></p>
+    <span id="errormsgName"></span> <br> <br>
+    <button id="submit" type="submit">Submit</button>
+    
+    <script>
+        $('#name').keyup(function(){
+            var name= $('#name').val();
+            var nameLength= name.length;
+            if(nameLength>=6 && nameLength<=10){
+                $('#errormsgName').text("Name is perfect");
+            }
+            else{
+                $('#errormsgName').text('Name should be 6 to 10 charerter');
+            }
+
+            $('#name').blur(function(){
+                $('#errormsgName').text("");
+
+            });
+        });
+
+    </script>
+    <!-- image changing function ////////////////////////////////////// -->
+<h1>Available Stock:</h1>
+<div class="main"><img src="image/img1.jpg" alt="" id="first"></div>
+<div class="img-group">
+    <img src="image/img2.jpg" alt="" id="second" class="size">
+    <img src="image/img3.jpeg" alt="" id="third"  class="size">
+    <img src="image/img4.jpeg" alt="" id="fourth" class="size">
+</div>
+    <script>
+$('#second').click(function(){
+    var firstImage= $('#second').attr('src');
+    $('#first').attr('src', firstImage);
+    
+});
+$('#third').click(function(){
+    var secondImg= $(this).attr('src');
+    $('#first').attr('src',secondImg);
+
+});
+
+$('#fourth').click(function(){
+   var thirdImg= $(this).attr('src');
+   $('#first').attr('src', thirdImg);
+});
+    </script>
+
+  
+</body>
+</html>

@@ -1,0 +1,10 @@
+.size{
+    height: 200px;
+    width: 200px;
+}
+#first{
+    width: 440px;
+}
+.main, .img-group{
+    text-align: center;
+}
