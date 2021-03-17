@@ -11,11 +11,18 @@
 <body>
     <h1>Form Validation</h1>
 
-    <p>Name: <input type="text" id="name"></p>
-    <span id="errormsgName"></span> <br> <br>
+    <p>Name:::::: <input type="text" id="name"></p>
+    <span id="errormsgName"></span> 
+    <p>Password: <input type="password" id="pass"></p>
+    <span id="errormsgPass"></span>
+    <span id="errormsgPass2"></span>
+    <p>Mobile::::: <input type="tel" id="number" value="+88"></p>
+    <span id="errormsgNum"></span>
     <button id="submit" type="submit">Submit</button>
     
     <script>
+        
+        // work for input field name..............................................
         $('#name').keyup(function(){
             var name= $('#name').val();
             var nameLength= name.length;
@@ -32,8 +39,20 @@
             });
         });
 
+        // work for input field password ............................................ 
+
+        $('#pass').keyup(function(){
+        $('#errormsgPass').text('Password should be at least 8 charecter'+ '<br>');
+        $('#errormsgPass2').text('Should be mixed uppercase, lowercase and number');
+        });
+        $('#pass').blur(function(){
+        $('#errormsgPass').text('');
+        $('#errormsgPass2').text('');
+        });
+
+
     </script>
-    <!-- image changing function ////////////////////////////////////// -->
+    <!-- image changing function ............................................... -->
 <h1>Available Stock:</h1>
 <div class="main"><img src="image/img1.jpg" alt="" id="first"></div>
 <div class="img-group">
